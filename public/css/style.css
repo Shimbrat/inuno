@@ -1,0 +1,576 @@
+
+@font-face {
+    font-family: "ProtoMono";
+    src: url("../font/ProtoMono-Regular.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "ProtoMono";
+    src: url("../font/ProtoMono-Light.otf") format("truetype");
+    font-weight: lighter;
+    font-style: normal;
+}
+@font-face {
+    font-family: "ProtoMono";
+    src: url("../font/ProtoMono-Bold.otf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #EC7C04;
+    font-family: "ProtoMono";
+}
+
+.mobile-vid{
+    display: none;
+}
+
+.title, .subtitle{
+    font-size: 45px;
+    font-weight: bold;
+    text-shadow: 0px 4px 4px rgb(249 82 0 / 50%), 0px 0px 2px rgb(255 135 0 / 50%), 0px 0px 4px #ff8700, 0px 0px 10px rgb(249 15 0 / 90%), -1px 8px 13px rgb(249 15 0 / 60%);
+    text-align: center;
+}
+
+.subtitle{
+    font-size: 32px;
+}
+
+.subtitlegray{
+    color: #c1c1c1;
+    font-size: 28px;
+}
+
+.eff{
+    background-image: url(../img/effect.gif);
+    background-repeat: repeat;
+    inset: 0px;
+    display: block;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    pointer-events: none;
+    position: fixed;
+    width: 100%;
+    z-index: 500;
+    opacity: 0.18;
+}
+
+body{
+    background: black;
+}
+
+header{
+    width: 100%;
+    position: relative;
+}
+
+header video{
+    width: 100%;
+    height: 560px;
+    object-fit: fill;
+}
+
+header img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 300px;
+}
+
+.maincont{
+    width: 100%;
+    position: relative;
+    text-align: center;
+    margin:50px 0;
+    font-size: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.maincont h3{
+    padding: 0 100px;
+    margin: 25px 0;
+}
+
+.maincont .btnconnect{
+    border: 1px solid #EC7C04;
+    width: fit-content;
+    padding: 10px 50px;
+    font-size: 22px; 
+    cursor: pointer;
+    transition: all 300ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.maincont .btnconnect:hover{
+    border: 1px solid #c1c1c1;
+}
+
+.bgvid{
+    position: absolute;
+    z-index: -1;
+}
+
+.orb{
+    left: -10%;
+    width: 350px;
+}
+
+.tube{
+    right: -5%;
+    width: 200px;
+    transform: rotate(-55deg);
+}
+
+.pretitle{
+    font-size: 28px;
+    margin-top: 30px;
+}
+
+.sweep{
+    width: 100%;
+    display: flex;
+    padding: 0 50px;
+    margin: 100px 0;
+}
+
+.sweep .steps, .sweep .video{
+    width: 50%;
+}
+
+.sweep .video{
+    position: relative;
+    padding: 0 30px;
+}
+
+.sweep .video video{
+    width: 100%;
+    object-fit: contain;
+    position: sticky;
+    top: 100px;
+    transition: all 450ms;
+    opacity: 0;
+}
+
+.sweep .video .active{
+    opacity: 1;
+}
+
+.sweep .steps{
+    text-align: left;
+}
+
+.sweep .steps h3{
+    text-shadow: none;
+    text-align: left;
+}
+
+.sweep .steps img{
+    width: 100%;
+}
+
+.sweep .steps .tweet{
+    width: 400px;
+    margin: 100px 0;
+    border: 1px solid #EC7C04;
+    margin-bottom: 300px;
+}
+
+.sweep .steps .tweet h3{
+    border-bottom: 1px solid #EC7C04;
+    font-size: 15px;
+    padding: 5px 10px;
+}
+
+.team{
+    margin: 0 auto;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.team .title{
+    display: flex;
+    justify-content: center; 
+    border: 1px solid #EC7C04;
+}
+
+.team .title .bar, .team .title h4{
+    width: 33%;
+}
+
+.team .title .bar{
+    background-image: url(../img/dots.png);
+}
+
+.team .title h4{
+    font-size: 20px;
+    padding: 5px 10px;
+}
+
+.team .subteam{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 30px 0;
+    border: 1px solid #EC7C04;
+    gap: 2px;
+}
+
+.team .subteam .member .avatar{
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 5px;
+    border: 2px solid #EC7C04;
+    box-shadow: rgb(249 82 0 / 50%) 0px 0px 40px;
+}
+
+.team .subteam .member img{
+    height: 70px;
+}
+
+.team .subteam .member{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.team .subteam .member span{
+    font-size: 17px;
+    text-align: center;
+}
+
+.fast{
+    margin: 60px 0;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.fast h2{
+    font-size: 27px;
+}
+
+.fast h4{
+    font-size: 22px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.fast .ft{
+    margin-bottom: 150px;
+}
+
+.fast .sub-fast{
+    width: 50%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    float: left;
+}
+
+.fast .sub-fast span{
+    color: #ade25d;
+    text-shadow: none;
+}
+
+.fast .sub-fast .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    min-height: 80px;
+}
+
+.fast .sub-fast .title .logo{
+    display: flex;
+    align-items: center;
+}
+
+.fast .sub-fast .title .logo img{
+    width: 55px;
+}
+
+.fast .sub-fast .title .logo span{
+    font-size: 18px;
+}
+
+.fast .sub-fast .green{
+    margin-bottom: 15px;
+    color: #ade25d;
+}
+
+.fast .sub-fast .orange{
+    margin-bottom: 15px;
+    color: #EC7C04;
+}
+
+.fast .sub-fast .bar-green{
+    margin-bottom: 20px;
+    color: black;
+    background: #ade25d;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.fast .sub-fast .bar-orange{
+    margin-bottom: 20px;
+    color: black;
+    background: #EC7C04;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.fast .sub-fast .title span{
+    margin: 0;
+}
+
+.fast .sub-fast video{
+    margin: 50px 0;
+    width: 100%;
+    max-width: 600px;
+    border: 2px solid #EC7C04;
+}
+
+.fast .sub-fast h4{
+    font-size: 22px;
+    margin-top: -10px;
+}
+
+.enough{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.enough h2{
+    font-size: 35px;
+}
+
+.enough p{
+    margin-top: 25px;
+    padding: 0 230px;
+}
+
+.enough .btnconnect{
+    margin-top: 35px;
+    border: 1px solid #EC7C04;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 50px;
+    font-size: 26px;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.enough .btnconnect:hover{
+    border: 1px solid #ecdecf;
+    color: #ecdecf;
+}
+
+.enough .btnconnect svg{
+    margin-right: 20px;
+}
+
+footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 80px 0;
+}
+
+footer img{
+    width: 80%;
+    max-width: 350px;
+}
+
+footer .menu span{
+    color: #c1c1c1;
+}
+
+footer .menu{
+    font-size: 20px;
+}
+
+footer .menu a{
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1100px) {
+    .orb {
+        width: 200px;
+    }
+    .tube {
+        width: 150px;
+    }
+
+    .team {
+        width: 80%;
+    }
+
+    .fast .sub-fast video {
+        margin: 50px 0;
+        width: 80%;
+        max-width: 600px;
+        border: 2px solid #EC7C04;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    header video {
+        height: 450px;
+    }
+
+    .orb, .tube {
+        display: none;
+    }
+
+    .sweep .steps .tweet {
+        width: unset;
+    }
+
+
+    .team .title .bar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .fast .sub-fast {
+        width: 100%;
+    }
+    .enough p {
+        padding: 0 150px;
+    }
+
+    .title, .subtitle {
+        font-size: 30px;
+    }
+
+    .subtitlegray {
+        padding: 0 50px;
+        font-size: 22px;
+    }
+
+    .sweep .video{
+        display: none;
+    }
+
+    .sweep .steps {
+        width: 100%;
+    }
+
+    .mobile-vid{
+        display: block;
+        width: 80%;
+        margin-bottom: 40px;
+    }
+
+    .sweep .steps img {
+        width: 60%;
+    }
+
+    .sweep .steps .tweet {
+        margin: 20px 0;
+    }
+
+    .fast .ft {
+        margin-bottom: 50px;
+    }
+
+    .maincont {
+        padding: 0 20px;
+    }
+
+    .maincont h3 {
+        padding: 0 20px;
+    }
+
+    .title, .subtitle {
+        font-size: 23px;
+    }
+
+    .sweep .steps h3 {
+        text-align: center;
+    }
+
+    .sweep {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sweep .steps {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .enough .btnconnect {
+        padding: 10px 30px;
+        font-size: 20px;
+    }
+
+    .fast .sub-fast .title span {
+        font-size: 52px;
+    }
+    footer .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .team .title .bar{
+        width: 25%;
+    }
+    .team .title h4 {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .fast .sub-fast .bar-green {
+        width: 80%;
+    }
+
+    .enough p {
+        padding: 0 50px;
+    }
+
+    .mobile-vid {
+        width: 95%;
+    }
+}
