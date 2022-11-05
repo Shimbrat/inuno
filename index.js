@@ -140,10 +140,14 @@ app.use(
 
 app.get("/", async (req, res) => {
   res.status(400).json({
-    error: "Invalid request.",
+    error: "Invalid request....",
   });
 });
-
+app.get("/api/error", async (req, res) => {
+  res.status(400).json({
+    error: "ALARM!ERROR!",
+  });
+});
 app.get("/api/assets", async (req, res) => {
   if (req.method === "GET") {
     const address = xssGuard(req.query.address),
@@ -225,7 +229,7 @@ app.get("/api/rates", async (req, res) => {
       });
   } else
     res.status(400).json({
-      error: "Invalid request.",
+      error: "Invalid request..",
     });
 });
 
